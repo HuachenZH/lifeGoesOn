@@ -1,0 +1,14 @@
+这是最黑暗最低谷的时候。所以要活下去。
+
+The goal is to learn py web crawler, then use it to make sth useful.
+
+ref
+- tuto (very basic) web crawler in zhihu zhuanlan
+  https://zhuanlan.zhihu.com/p/77560712
+- w3school requests Response object
+  https://www.w3schools.com/python/ref_requests_response.asp
+
+Diary
+0x00 the very basic feature ok. Can send request to google then get response.
+
+next: try with other sites. Analyse the response, get useful info

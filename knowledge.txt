@@ -1,0 +1,31 @@
+Difficulties encounterd
+- error: 'utf-8' codec can't decode byte 0xe9 in position 7329: invalid continuation byte
+  i was trying to convert bytes to string.
+  Solution found on stackoverflow: https://stackoverflow.com/questions/19699367/for-line-in-results-in-unicodedecodeerror-utf-8-codec-cant-decode-byte
+  The correct encoding was: "ISO-8859-1"
+
+
+
+Try not to stackoverflow next time
+- bytes to string
+  $ b'this is bytes'.decode('utf-8')
+  or
+  $ str(b'this is bytes', 'utf-8')
+  where 'utf-8' is the encoding/decoding format. It can be something else.
+
+- send request to an url and get response
+  There are several ways to do so:
+  - use urlopen to fetch the website directly
+    $ import urllib.request
+    $ with urllib.requst.urlopen('https://www.google.com') as response:
+    $     html = response.read() # html will be bytes
+  - create a request object, Request, then use urlopen to open the request object
+    $ import urllib.request
+    $ req = urllib.request.Request('https://www.google.com')
+    $ with urllib.request.urlopen(req) as response:
+    $     html = response.read()
+  - use the requests library (seen before with rootme)
+    $ import requests
+    $ resp = requests.get('https://www.google.com').text
+    where text is an attribute of the requests Response object. Other attributes:
+    https://www.w3schools.com/python/ref_requests_response.asp
